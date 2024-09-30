@@ -1,0 +1,16 @@
+/* NAVIGATION STUFF GOES HERE  */
+.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+    section {
+        flex-basis: calc(50% - ($gutter/2));
+
+    }
+}
+
+footer div {
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+}
