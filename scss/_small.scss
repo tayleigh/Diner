@@ -21,82 +21,103 @@ body {
 
 
 /* --------------------------- HEADER --------------------------- */
-#headerWrapper {border-bottom: 1px solid $greyColor;}
+#headerWrapper {border-bottom: none;}
 header {
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: 50px auto 44px;
     column-gap: $gutter;
     align-items: center; //vertically
-    padding: .5rem $gutter;
+    padding: .5rem 5px;
     span {
-        font-size: 1.6rem;
-        font-weight: $lightWeight;
+        font-size: 2rem;
+        font-weight: $defaultFont;
         color: $primaryColor;
     }
+    
 } // end header
 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-nav {
-    background-color: $primaryColor;
-}
-#myButton::before {
+
+#primaryNav button::before {
     content: "\2630";
 }
-#myButton {
+
+#primaryNav button {
     border: none;
     background: none;
-    color: #fff;
     font-size: 2rem;
     padding: 0;
     width: 44px;
-    height: 44px;
-    font-weight: $lightWeight;
+    height:44px;
     cursor: pointer;
 }
-ul.menuLinks {
+#primaryNav{
+    margin: 0;
+}
+
+#primaryNav ul {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 100%;
+    background-color: #f7f7f7;
     list-style-type: none;
     margin: 0;
     padding: 0;
-   display: none;
-    li a {
-        color:#fff;
-        display: block;
-        padding: .75rem $gutter;
-       text-decoration: none;
-    }
-    li.active a {
-        color: $primaryColor;
-        background-color: $secondaryColor;
-    
-    }
-}
-
-ul.open.menuLinks {
+    font-weight: 500;
+    text-align: right;
+    display: none;
+    z-index: 2;
+li a {
+    color: $secondaryColor;
     display: block;
+    padding: .75rem 5px;
+    text-decoration: none;
+    border-bottom: .5px solid #9a9a9a;
 }
-#myButton.open::before {
-    content: "x";
+li.active a {
+    color: $primaryColor; 
 }
+}//end of ul
+
+//open class
 
 
-
-
-
-
-
-
-
-
+#primaryNav ul.open {
+    display: block;
+    z-index: 2;
+}
 
 
 /* --------------------------- MAIN --------------------------- */
 main {
+
+
     h1 {
-        padding: 1rem $gutter.5rem $gutter;
-        font-size: 1.5rem;
+        padding: 1rem $gutter 0 $gutter;
+        font-size: 3rem;
         color: $secondaryColor;
-        font-weight: $lightWeight
+        font-weight: $defaultFont;
+        text-align: center;
+        margin: 0;
+    }
+    h2{
+        padding: 1rem $gutter.1rem $gutter;
+        margin-bottom: 0;
+        font-size: 2.1rem; 
+        color: $secondaryColor;
+        text-align: center;
+        font-weight: $defaultFont;
+
+    }
+    h3{
+        color: $primaryColor;
+        text-align:center;
+        font-weight: 400;
+        font-size: 1rem;
+        padding: 0;
+
     }
     p {
         padding: .5rem $gutter;
@@ -105,98 +126,148 @@ main {
     }
 }// end main
 
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+video { 
+    
+    width: 100%;
+    height: auto;
+    }
+    div {
+        position: absolute;
+        margin: 0;
+        padding: 0 5px 0 10px;
+        bottom: 20px; 
+        right: 20px;
+        background:  rgba(226, 226, 226, 0.78);
+        border-radius: 10px;
+        width: 35%;
+       
+    }
+h3 {
+   margin: 10px 0 20px 0;
+    color: $secondaryColor;
+    text-align: left;
+}
+hr{
+margin: -2px;
+width: 75%;
+border-color: $accentColor;
+border-top: 4px solid $accentColor;
+border-radius: 4px;
+
+}
+}
+
+
+
+
 .allcards {
     padding: 0 $gutter;
     section {
-        border: 1px solid #9c9c9c;
-        border-radius: 10px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
         overflow: hidden;
         margin: 1rem 0;
-        h2, p, img {
+        background-color: #f7f7f7;
+        h2, p {
             margin: 0;
             padding: 1rem $gutter;
         }
         h2 {
-            background-color: $secondaryColor;
+            background-color: $primaryColor;
             font-size: 1.5rem;
             text-align: center;
-            color: $primaryColor;
+            color: #fff;
         }
         img {
             width: 100%;
             height: auto;
             display: block;
         }
+        ul{
+            margin:16px 0px;
+         li {
+            font-style: italic;
+            margin: 0px;
+            
+         }   
         
-        p {
-           font-style: italic;
+        li::marker {
+           color: $primaryColor;
+           margin: 0;
         }
-        a {
-            display: block;
-            background-color: $accentColor;
-            padding: .75rem;
-            text-align: center;
-            margin: 0 3rem 1rem 3rem;
-            border-radius: 8px;
-            color: $greyColor;
-            font-weight: 800;
-            text-decoration: none;
-        }
+    }
     }
 }//all card
 
+.logos {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 35px; 
+    justify-content: center; 
+    flex-basis: calc(50% - ($gutter/2));
+    margin:$gutter;
+}
 
-
+.logos img {
+    margin: 0; 
+    width: 120px; 
+    max-width: 100%; 
+    height: auto; 
+    
+}
 
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-    background-color: $primaryColor;
+    background-color: #000000;
+    text-align: center;
+    
 }
 footer{
     padding: 0.5rem $gutter;
-   
+    justify-content: center;
+    align-self: center;
 
-    .conatact {
-        p {font-size: 1.2rem; 
-            margin: .5rem; 
-            color: $greyColor;
-            a {
-                color: $greyColor;
-
-            }
-        }
-        ion-icon{color: $greyColor; padding-right: 5px;}
-    } //end of contact
-    .social {
+    h2 a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 2rem;
+    
+       
+    }
+    .ady{
         display: flex;
-        justify-content: center;
-        a {
-            display: block;
-            font-size: 2rem;
-            margin: .5rem;
-            padding: .5rem;
-            color: $greyColor;
-        }
-        a:hover{
-            color:#9c9c9c
-        }
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: $gutter;
+        text-align: left;
+        border-bottom: .4px dashed #9a9a9a;
+        padding: 10px 0;
+       
+        
+    h3 {
+        color: #aaa;
+        margin-bottom: 5px; 
     }
-    .location {
-        font-size: 1rem;
-        color: $greyColor;
-    }
-
-    p.legal {
+    p {
+        color:#f7f7f7;
         margin: 0;
-        font-weight:$lightWeight;
-        text-align: center;
-        font-size: 1rem;
-        color: $greyColor;
-        a {
-            color: $greyColor
-        }
     }
+}
+
+  p {
+    color:white;
+
+} 
+
+    
 
 } // end footer 
 

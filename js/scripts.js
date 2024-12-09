@@ -1,9 +1,9 @@
-const hamburgerElement = document.querySelector('#myButton');
-const navElement = document.querySelector('.menuLinks');
+const btnElement =document.querySelector('#primaryNav > button')
+const navElement =document.querySelector('#primaryNav > ul')
 
-hamburgerElement.addEventListener('click', () => {
-    hamburgerElement.classList.toggle('open');
-    navElement.classList.toggle('open');
+btnElement.addEventListener('click', () => {
+    btnElement.classList.toggle('open')
+    navElement.classList.toggle('open')
 })
 // inject right year
 const rightNow = new Date()

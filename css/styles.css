@@ -321,211 +321,308 @@ body {
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #ecede1;
+  border-bottom: none;
 }
 
 header {
   display: grid;
-  grid-template-columns: 50px auto;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  grid-template-columns: 50px auto 44px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   align-items: center;
-  padding: 0.5rem 10px;
+  padding: 0.5rem 5px;
 }
 header span {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: #521e05;
+  font-size: 2rem;
+  font-weight: "Open Sans", sans-serif;
+  color: #9b194f;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
-nav {
-  background-color: #521e05;
-}
-
-#myButton::before {
+#primaryNav button::before {
   content: "☰";
 }
 
-#myButton {
+#primaryNav button {
   border: none;
   background: none;
-  color: #fff;
   font-size: 2rem;
   padding: 0;
   width: 44px;
   height: 44px;
-  font-weight: 300;
   cursor: pointer;
 }
 
-ul.menuLinks {
+#primaryNav {
+  margin: 0;
+}
+
+#primaryNav ul {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 100%;
+  background-color: #f7f7f7;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-weight: 500;
+  text-align: right;
   display: none;
+  z-index: 2;
 }
-ul.menuLinks li a {
-  color: #fff;
+#primaryNav ul li a {
+  color: #0e0147;
   display: block;
-  padding: 0.75rem 10px;
+  padding: 0.75rem 5px;
   text-decoration: none;
+  border-bottom: 0.5px solid #9a9a9a;
 }
-ul.menuLinks li.active a {
-  color: #521e05;
-  background-color: #f5e3a9;
+#primaryNav ul li.active a {
+  color: #9b194f;
 }
 
-ul.open.menuLinks {
+#primaryNav ul.open {
   display: block;
-}
-
-#myButton.open::before {
-  content: "x";
+  z-index: 2;
 }
 
 /* --------------------------- MAIN --------------------------- */
 main h1 {
-  padding: 1rem 10px 0.5rem 10px;
-  font-size: 1.5rem;
-  color: #f5e3a9;
-  font-weight: 300;
+  padding: 1rem 20px 0 20px;
+  font-size: 3rem;
+  color: #0e0147;
+  font-weight: "Open Sans", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+main h2 {
+  padding: 1rem 20px 0.1rem 20px;
+  margin-bottom: 0;
+  font-size: 2.1rem;
+  color: #0e0147;
+  text-align: center;
+  font-weight: "Open Sans", sans-serif;
+}
+main h3 {
+  color: #9b194f;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0;
 }
 main p {
-  padding: 0.5rem 10px;
+  padding: 0.5rem 20px;
   color: #333;
   line-height: 150%;
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero video {
+  width: 100%;
+  height: auto;
+}
+.hero div {
+  position: absolute;
+  margin: 0;
+  padding: 0 5px 0 10px;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(226, 226, 226, 0.78);
+  border-radius: 10px;
+  width: 35%;
+}
+.hero h3 {
+  margin: 10px 0 20px 0;
+  color: #0e0147;
+  text-align: left;
+}
+.hero hr {
+  margin: -2px;
+  width: 75%;
+  border-color: #d96a5a;
+  border-top: 4px solid #d96a5a;
+  border-radius: 4px;
+}
+
 .allcards {
-  padding: 0 10px;
+  padding: 0 20px;
 }
 .allcards section {
-  border: 1px solid #9c9c9c;
-  border-radius: 10px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   overflow: hidden;
   margin: 1rem 0;
+  background-color: #f7f7f7;
 }
-.allcards section h2, .allcards section p, .allcards section img {
+.allcards section h2, .allcards section p {
   margin: 0;
-  padding: 1rem 10px;
+  padding: 1rem 20px;
 }
 .allcards section h2 {
-  background-color: #f5e3a9;
+  background-color: #9b194f;
   font-size: 1.5rem;
   text-align: center;
-  color: #521e05;
+  color: #fff;
 }
 .allcards section img {
   width: 100%;
   height: auto;
   display: block;
 }
-.allcards section p {
-  font-style: italic;
+.allcards section ul {
+  margin: 16px 0px;
 }
-.allcards section a {
-  display: block;
-  background-color: #364d14;
-  padding: 0.75rem;
-  text-align: center;
-  margin: 0 3rem 1rem 3rem;
-  border-radius: 8px;
-  color: #ecede1;
-  font-weight: 800;
-  text-decoration: none;
+.allcards section ul li {
+  font-style: italic;
+  margin: 0px;
+}
+.allcards section ul li::marker {
+  color: #9b194f;
+  margin: 0;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  flex-basis: calc(50% - 10px);
+  margin: 20px;
+}
+
+.logos img {
+  margin: 0;
+  width: 120px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #521e05;
+  background-color: #000000;
+  text-align: center;
 }
 
 footer {
-  padding: 0.5rem 10px;
-}
-footer .conatact p {
-  font-size: 1.2rem;
-  margin: 0.5rem;
-  color: #ecede1;
-}
-footer .conatact p a {
-  color: #ecede1;
-}
-footer .conatact ion-icon {
-  color: #ecede1;
-  padding-right: 5px;
-}
-footer .social {
-  display: flex;
+  padding: 0.5rem 20px;
   justify-content: center;
+  align-self: center;
 }
-footer .social a {
-  display: block;
+footer h2 a {
+  color: #fff;
+  text-decoration: none;
   font-size: 2rem;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  color: #ecede1;
 }
-footer .social a:hover {
-  color: #9c9c9c;
+footer .ady {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+  border-bottom: 0.4px dashed #9a9a9a;
+  padding: 10px 0;
 }
-footer .location {
-  font-size: 1rem;
-  color: #ecede1;
+footer .ady h3 {
+  color: #aaa;
+  margin-bottom: 5px;
 }
-footer p.legal {
+footer .ady p {
+  color: #f7f7f7;
   margin: 0;
-  font-weight: 300;
-  text-align: center;
-  font-size: 1rem;
-  color: #ecede1;
 }
-footer p.legal a {
-  color: #ecede1;
+footer p {
+  color: white;
 }
 
 @media only screen and (min-width: 35rem) {
   /* NAVIGATION STUFF GOES HERE  */
+  #primaryNav ul {
+    width: 200px;
+    right: 0;
+  }
+  .hero div {
+    bottom: 20px;
+    left: 20px;
+    width: 20%;
+  }
+  .hero div h3 {
+    font-size: 1.2rem;
+  }
   .allcards {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
   }
   .allcards section {
-    flex-basis: calc(50% - 5px);
+    flex-basis: calc(50% - 10px);
   }
-  footer div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+  .logos {
+    flex-basis: calc(33.33% - 6.6666666667px);
+  }
+  footer .ady {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
   }
 }
 @media only screen and (min-width: 64rem) {
-  header, nav, main {
+  header, nav, main, footer {
     max-width: 960px;
     margin: auto;
   }
   /* NAVIGATION STUFF GOES HERE  */
-  #myButton {
+  #primaryNav button {
     display: none;
   }
-  ul.menuLinks li a {
-    padding: 0.4rem 1rem;
+  header {
+    grid-template-columns: 50px auto auto;
   }
-  ul.menuLinks, ul.menuLinks.open {
+  #primaryNav ul, #primaryNav ul.open {
     display: flex;
     justify-content: flex-end;
+    width: auto;
+    position: static;
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
   }
-  ul.menuLinks a:hover {
-    background-color: #f5e3a9;
-    color: #521e05;
+  #primaryNav ul li a, #primaryNav ul.open li a {
+    padding: 0.4rem 1rem;
+    border: none;
+    margin-top: 50px;
+  }
+  .hero {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .hero div {
+    position: absolute;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    bottom: 20px;
+    right: 5%;
+    left: 5%;
+    background: rgba(226, 226, 226, 0.78);
+    border-radius: 10px;
+    width: 90%;
+  }
+  .hero h3 {
+    font-size: 1.5rem;
   }
   .allcards section {
-    flex-basis: calc(33.333% - 6.6666666667px);
+    flex-basis: calc(24% - 10px);
   }
-  footer div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  .logos {
+    flex-basis: calc(16% - 3.3333333333px);
   }
 }

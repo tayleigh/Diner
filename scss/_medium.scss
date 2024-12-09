@@ -1,4 +1,35 @@
 /* NAVIGATION STUFF GOES HERE  */
+
+#primaryNav ul {
+    width: 200px;
+    right: 0;
+    
+
+}
+
+
+
+
+
+.hero {
+    
+    div {
+      
+        bottom: 20px; 
+        left: 20px;
+
+        width: 20%;
+        h3{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+
+
+
+
 .allcards {
     display: flex;
     flex-wrap: wrap;
@@ -8,9 +39,15 @@
 
     }
 }
-
-footer div {
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-items: center;
+.logos {
+    flex-basis: calc(33.33% - ($gutter/3));
 }
+
+footer .ady {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: $gutter;
+    text-align: left;
+ }

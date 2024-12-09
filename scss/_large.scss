@@ -1,24 +1,54 @@
-header, nav, main {
+header, nav, main, footer {
     max-width: 960px;
     margin: auto;
 }
 
 /* NAVIGATION STUFF GOES HERE  */
-#myButton {
+ #primaryNav button{
  display: none;
 }
-ul.menuLinks li a {
-    padding: .4rem 1rem;
-}
-ul.menuLinks, ul.menuLinks.open {
+
+header {grid-template-columns: 50px auto auto;}
+#primaryNav ul, #primaryNav ul.open {
     display: flex;
     justify-content: flex-end;
+    width: auto;
+    position: static;
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
+
+    li a {
+        padding: .4rem 1rem;
+        border: none;
+        margin-top: 50px;
+    }
     
 }
-ul.menuLinks a:hover {
-    background-color: $secondaryColor;
-    color:$primaryColor;
+.hero {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+  
+    div {
+        position: absolute;
+        margin: 0;
+        padding: 10px 10px 0 10px;
+        bottom: 20px; 
+        right: 5%;
+        left: 5%;
+        background:  rgba(226, 226, 226, 0.78);
+        border-radius: 10px;
+        width: 90%;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+
+
 }
+
 
 
 
@@ -27,13 +57,17 @@ ul.menuLinks a:hover {
    
     
     section {
-        flex-basis: calc(33.333% - (($gutter*2)/3));
+        flex-basis: calc(24% - (($gutter*2)/4));
 
     }
 }
 
-footer div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.logos { 
+        flex-basis: calc(16% - ($gutter/6));
+}
+
+// footer div {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
     
-    }
+//     }
